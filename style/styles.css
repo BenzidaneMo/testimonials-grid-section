@@ -11,6 +11,26 @@
     --LightGrayishBlue: hsl(210, 46%, 95%);
 }
 
+::-webkit-scrollbar {
+    width: .5em;
+
+}
+
+::-webkit-scrollbar-track {
+    margin-block: 5px;
+    background: hsla(180, 1%, 32%, 0.26);
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsla(0, 0%, 19%, 0.42);
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(49, 49, 49, 0.655);
+}
+
 
 * {
     box-sizing: border-box;
@@ -20,7 +40,7 @@ body {
     display: grid;
     place-content: center;
     min-height: 100vh;
-    font-family: 'Barlow Semi Condensed',sans-serif;
+    font-family: 'Barlow Semi Condensed', sans-serif;
     background-color: var(--LightGrayishBlue);
 }
 
@@ -28,14 +48,22 @@ body {
     display: grid;
     min-height: 60vh;
     width: 80vw;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     gap: 1.5rem;
+    user-select: none;
 }
 
 .content {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 5px 5px 20px rgba(21, 22, 22, 0.185);
+    cursor: pointer;
+    transition: transform 150ms ease-in-out, box-shadow 150ms ease-in;
+}
+
+.content:hover {
+    transform: translateY(.2rem) scale(1.01);
+    box-shadow: 5px 5px 20px rgba(21, 22, 22, 0.270);
 }
 
 /*.firstcard {
@@ -75,7 +103,7 @@ body {
     height: 30px;
 }
 
-.content .head div > * {
+.content .head div>* {
     margin: 0;
 }
 
@@ -96,12 +124,15 @@ body {
 .bck-clr-Moderatviolet {
     background-color: var(--Moderateviolet);
 }
+
 .bck-clr-VeryDarkGrayishBlue {
     background-color: var(--VeryDarkGrayishBlue);
 }
+
 .bck-clr-White {
     background-color: var(--White);
 }
+
 .bck-clr-VeryDarkBlackishBlue {
     background-color: var(--VeryDarkBlackishBlue);
 }
@@ -109,20 +140,22 @@ body {
 .clr--white {
     color: var(--White);
 }
+
 .clr--darkbleu {
     color: var(--VeryDarkBlackishBlue);
 }
 
 
 @media (min-width: 40em) {
-    
+
     .grid-col-span {
         grid-column: span 2;
     }
+
     .container {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .content:nth-child(5) {
         grid-column-start: 2;
         grid-row: 2 / span 2;
@@ -130,14 +163,15 @@ body {
 }
 
 @media (min-width: 60em) {
-    
+
     .grid-col-span {
         grid-column: span 2;
     }
+
     .container {
         grid-template-columns: repeat(4, 1fr);
     }
-    
+
     .content:nth-child(5) {
         grid-column-start: 4;
         grid-row: 1 / span 2;
@@ -147,14 +181,12 @@ body {
 }
 
 
-
-
-
 .attribution {
     font-size: 11px;
     width: 100%;
     text-align: center;
 }
+
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
