@@ -109,7 +109,7 @@ body {
 
 
 .container .content.quotation {
-    background-image: url(./images/bg-pattern-quotation.svg);
+    background-image: url(/images/bg-pattern-quotation.svg);
     background-repeat: no-repeat;
     background-size: 110px;
     background-position: top right 15%;
