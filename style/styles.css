@@ -55,7 +55,7 @@ body {
 
 .content {
     border-radius: 10px;
-    padding: 20px;
+    padding: 25px;
     box-shadow: 5px 5px 20px rgba(21, 22, 22, 0.185);
     cursor: pointer;
     transition: transform 150ms ease-in-out, box-shadow 150ms ease-in;
@@ -64,6 +64,24 @@ body {
 .content:hover {
     transform: translateY(.2rem) scale(1.01);
     box-shadow: 5px 5px 20px rgba(21, 22, 22, 0.270);
+}
+
+.content:hover .head img {
+    animation: rotation 3s ease-in-out 2s infinite;
+}
+
+@keyframes rotation {
+    30% {
+        transform: rotate(-25deg);
+    }
+
+    60% {
+        transform: rotate(25deg) scale(1.3);
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
 }
 
 /*.firstcard {
@@ -91,6 +109,8 @@ body {
 
 
 .content .foot p {
+    margin-block: 20px 0;
+    font-size: 16px;
     opacity: 70%;
 }
 
@@ -116,8 +136,9 @@ body {
 }
 
 .content .foot p:nth-child(1) {
-    font-size: 18px;
+    font-size: 1.35rem;
     font-weight: 600;
+
     opacity: 1;
 }
 
